@@ -1,6 +1,8 @@
 # Changelog
 
 ## 202606
+
+OpenTDX 并不是调用 pytdx。它重新实现了TDX Binary Protocol的协议解析。
 ~~~
 RainX
 │
@@ -20,6 +22,7 @@ RainX
           OpenTDX
 
 ~~~
+
 
 
 
