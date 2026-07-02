@@ -141,7 +141,28 @@ output
 
 ~~~
 
-# 股票列表
+## 股票列表
+
+~~~
+
+  def stock_list(self, market: MARKET, start = 0, count = 0) -> list[dict]:
+        '''
+        获取股票列表
+        Args:
+            market: MARKET - 市场类型 (SZ: 深圳, SH: 上海, BJ: 北交所)
+            start: int     - 起始位置，默认为0
+            count: int     - 获取数量，默认为0（获取全部）
+        Return: 
+            List[Dict]: 股票信息列表，每个元素包含：
+                - code: str      - 股票代码
+                - name: str      - 股票名称
+                - pre_close: int - 昨日收盘价
+        '''
+        return self.q_client().get_list(market, start, count)
+
+~~~
+
+~~~
 print(pd.DataFrame(client.stock_list(MARKET.SZ,count=0)))
 
          code  vol          name  decimal_point     pre_close                             unknown1
