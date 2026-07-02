@@ -139,7 +139,7 @@ output
 ~~~
 
 
-~~~
+
 
 ## 股票列表
 
@@ -176,7 +176,11 @@ print(pd.DataFrame(client.stock_list(MARKET.SZ,count=0)))
 17131  300017  100          网宿科技              2     18.700001       [11134.431640625, 12671, 9617]
 17132  300018  100          中元股份              2     15.000000    [1285.7086181640625, 12638, 9607]
 
+~~~
 
+
+
+~~~
 print(pd.DataFrame(client.stock_list(MARKET.SZ)))
 
          code  vol       name  decimal_point  pre_close                    unknown1
