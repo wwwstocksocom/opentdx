@@ -391,7 +391,34 @@ print(pd.DataFrame(client.stock_quotes(MARKET.SZ, '000001')))
 
 [1 rows x 26 columns]
 
+~~~
+
+### 获取异动数据
+
+~~~
+    def stock_unusual(self, market: MARKET, start: int = 0, count: int = 0) -> list[dict]:
+        '''
+        获取异动数据
+        Args:
+            market: MARKET - 市场类型 (SZ: 深圳, SH: 上海, BJ: 北交所)
+            start: int      - 起始位置，默认为0
+            count: int      - 获取数量，默认为0（获取全部）
+        Return: 
+            List[Dict]: 股票信息列表，每个元素包含：
+                - index: int     - 序号
+                - market: MARKET - 市场类型 (SZ: 深圳, SH: 上海, BJ: 北交所)
+                - code: str      - 股票代码
+                - time: time     - 时间
+                - desc: str      - 异动类型
+                - value: str     - 异动值
+        '''
+        return self.q_client().get_unusual(market, start, count)
+~~~
+
+~~~
+
 print("获取异动数据")
+
 print(pd.DataFrame(client.stock_unusual(MARKET.SZ)))
 
        index     market    code      time  desc            value  unusual_type
