@@ -457,6 +457,8 @@ def stock_auction(self, market: MARKET, code: str) -> list[dict]:
         return self.q_client().get_auction(market, code)
 ~~~
 
+client.stock_auction(market_type, code) 返回的是一个包含多个时间点竞价数据的 list[dict]（例如 9:15 到 9:25 之间的多条快照）
+
 ~~~
 
 print("获取竞价数据")
@@ -476,6 +478,10 @@ print(pd.DataFrame(client.stock_auction(MARKET.SZ, '300308')))
 86  14:59:51  1049.00000     1608  4294966763
 
 [87 rows x 4 columns]
+
+~~~
+
+~~~
 
 print("获取历史委托数据")
 print(pd.DataFrame(client.stock_history_orders(MARKET.SZ, '000001', date(2026, 3, 16))))
