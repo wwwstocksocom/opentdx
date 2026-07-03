@@ -436,6 +436,27 @@ print(pd.DataFrame(client.stock_unusual(MARKET.SZ)))
 
 [11563 rows x 7 columns]
 
+### 获取竞价数据
+
+~~~
+def stock_auction(self, market: MARKET, code: str) -> list[dict]:
+        '''
+        获取竞价数据
+        Args:
+            market: MARKET - 市场类型 (SZ: 深圳, SH: 上海, BJ: 北交所)
+            code: str      - 指数代码
+        Return: 
+            List[Dict]: 股票竞价列表，每个元素包含：
+                - time: time        - 时间
+                - price: float      - 撮合价
+                - matched: int      - 匹配量
+                - unmatched: int    - 未匹配量
+        '''
+        return self.q_client().get_auction(market, code)
+~~~
+
+~~~
+
 print("获取竞价数据")
 print(pd.DataFrame(client.stock_auction(MARKET.SZ, '300308')))
 
