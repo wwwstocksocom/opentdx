@@ -438,6 +438,39 @@ print(pd.DataFrame(client.stock_unusual(MARKET.SZ)))
 
 ~~~
 
+~~~
+[
+    {
+        "index": 0,
+        "market": "SZ",
+        "code": "000008",
+        "time": "09:15:00",
+        "desc": "封涨停板",
+        "value": "2.86/198062.00",
+        "unusual_type": 20,
+        "v1": 0,
+        "v2": 2.859999895095825,
+        "v3": 198062.0,
+        "v4": 1.0089348943138683e-43,
+        "flag": 0
+    },
+    {
+        "index": 1,
+        "market": "SZ",
+        "code": "000026",
+        "time": "09:15:00",
+        "desc": "封涨停板",
+        "value": "20.11/449.00",
+        "unusual_type": 20,
+        "v1": 0,
+        "v2": 20.110000610351562,
+        "v3": 449.0,
+        "v4": 9.388699710976274e-44,
+        "flag": 0
+    },
+]
+~~~
+
 ### 获取竞价数据
 
 ~~~
@@ -479,6 +512,38 @@ print(pd.DataFrame(client.stock_auction(MARKET.SZ, '300308')))
 
 [87 rows x 4 columns]
 
+~~~
+
+json
+
+~~~
+[
+ {
+        "date":"20260716",
+        "code":"002180",
+        "time":"09:16:57",
+        "price":14.4399995804,
+        "matched":635,
+        "unmatched":-508
+    },
+    {
+        "date":"20260716",
+        "code":"002180",
+        "time":"09:17:06",
+        "price":13.8000001907,
+        "matched":822,
+        "unmatched":44
+    },
+    {
+        "date":"20260716",
+        "code":"002180",
+        "time":"09:17:15",
+        "price":14.1000003815,
+        "matched":822,
+        "unmatched":0
+    },
+
+]
 ~~~
 
 ~~~
