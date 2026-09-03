@@ -393,6 +393,167 @@ print(pd.DataFrame(client.stock_quotes(MARKET.SZ, '000001')))
 
 ~~~
 
+### 股票所属板块 
+
+~~~
+ boards = client.stock_belong_board(MARKET.SZ, '301487')
+~~~
+
+~~~
+{
+  "data": [
+    {
+      "board_type": "3",
+      "market": "1",
+      "board_symbol": "880209",
+      "board_symbol_name": "天津板块",
+      "close": 1693.62,
+      "pre_close": 1694.35,
+      "涨停数": "0",
+      "跌停数": "0",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880534",
+      "board_symbol_name": "锂电池概念",
+      "close": 3190.62,
+      "pre_close": 3187.59,
+      "涨停数": "2",
+      "跌停数": "1",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880632",
+      "board_symbol_name": "动力电池回收",
+      "close": 941.34,
+      "pre_close": 939.4,
+      "涨停数": "0",
+      "跌停数": "0",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880703",
+      "board_symbol_name": "人形机器人",
+      "close": 2177.77,
+      "pre_close": 2165.25,
+      "涨停数": "8",
+      "跌停数": "1",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880742",
+      "board_symbol_name": "固态电池",
+      "close": 1263.74,
+      "pre_close": 1261.76,
+      "涨停数": "1",
+      "跌停数": "0",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880755",
+      "board_symbol_name": "钠电池",
+      "close": 992.35,
+      "pre_close": 991.44,
+      "涨停数": "0",
+      "跌停数": "0",
+      "最相似": "1"
+    },
+    {
+      "board_type": "5",
+      "market": "1",
+      "board_symbol": "880781",
+      "board_symbol_name": "QFII新进",
+      "close": 2109.92,
+      "pre_close": 2091.54,
+      "涨停数": "9",
+      "跌停数": "1",
+      "最相似": "0"
+    },
+    {
+      "board_type": "5",
+      "market": "1",
+      "board_symbol": "880898",
+      "board_symbol_name": "近已解禁",
+      "close": 2168.44,
+      "pre_close": 2166.43,
+      "涨停数": "1",
+      "跌停数": "0",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880904",
+      "board_symbol_name": "机器人概念",
+      "close": 4977.56,
+      "pre_close": 4971.44,
+      "涨停数": "11",
+      "跌停数": "1",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880951",
+      "board_symbol_name": "新能源车",
+      "close": 1927.41,
+      "pre_close": 1921.81,
+      "涨停数": "11",
+      "跌停数": "0",
+      "最相似": "0"
+    },
+    {
+      "board_type": "4",
+      "market": "1",
+      "board_symbol": "880966",
+      "board_symbol_name": "消费电子概念",
+      "close": 2546.9,
+      "pre_close": 2548.87,
+      "涨停数": "4",
+      "跌停数": "0",
+      "最相似": "0"
+    },
+    {
+      "board_type": "12",
+      "market": "1",
+      "board_symbol": "881262",
+      "board_symbol_name": "电池",
+      "close": 650.0,
+      "pre_close": 645.81,
+      "涨停数": "0",
+      "跌停数": "0",
+      "最相似": "0"
+    },
+    {
+      "board_type": "12",
+      "market": "1",
+      "board_symbol": "881264",
+      "board_symbol_name": "电池化学品",
+      "close": 403.03,
+      "pre_close": 399.66,
+      "涨停数": "0",
+      "跌停数": "0",
+      "最相似": "0"
+    }
+  ],
+  "query_info": "53746f636b5f474c48510000",
+  "ext": "000001002d030000"
+}
+
+~~~
+
+
+
 ### 主力监控
 
 ~~~
