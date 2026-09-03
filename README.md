@@ -994,4 +994,11 @@ if __name__ == "__main__":
 
 ---
 
+
+## useful links
+
+https://pypi.org/project/opentdx/
+
+
+
 [![Star History Chart](https://api.star-history.com/svg?repos=LisonEvf/opentdx&type=Date)](https://star-history.com/#LisonEvf/opentdx&Date)
