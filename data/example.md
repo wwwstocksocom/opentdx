@@ -97,7 +97,7 @@ output
 
 ~~~
 
-获取个股F10
+### 获取个股F10
 
 ~~~
 from datetime import date
@@ -253,8 +253,11 @@ print(pd.DataFrame(client.index_info([(MARKET.SZ, '399001'), (MARKET.SH, '999999
 
 [800 rows x 10 columns]
 
+~~~
 
-获取K线数据
+### 获取K线数据
+
+~~~
 print(pd.DataFrame(client.stock_kline(MARKET.SH, '999999', PERIOD.DAILY)))
 print(pd.DataFrame(client.stock_kline(MARKET.SH, '999999', PERIOD.MINS, times=10)))
 
@@ -273,7 +276,11 @@ print(pd.DataFrame(client.stock_kline(MARKET.SH, '999999', PERIOD.MINS, times=10
 
 [800 rows x 10 columns]
 
-获取分时图
+~~~
+
+### 获取分时图
+
+~~~
 print(pd.DataFrame(client.stock_tick_chart(MARKET.SH, '999999')))
 
        price        avg      vol
@@ -325,8 +332,11 @@ print(pd.DataFrame(client.stock_tick_chart(MARKET.SZ, '000001', date(2026, 3, 16
 
 [240 rows x 3 columns]
 
+~~~
 
 ### 获取股票详细报价
+
+~~~
 print(pd.DataFrame(client.stock_quotes_detail(MARKET.SZ, '000001')))
 
       market    code  close   open   high    low  ...                                           handicap           unknown  rise_speed  active1  active2  turnover
@@ -337,8 +347,11 @@ print(pd.DataFrame(client.stock_quotes_detail(MARKET.SZ, '000001')))
 0  MARKET.SZ  300298  16.83  16.81  17.2  16.74      16.84  15:33:07.908        0.0  59168      683  100566864.0  28467  30702         0       497600  {'bid': [{'price': 16.82, 'vol': 130}, {'price': 16.81, 'vol': 64}, {'price': 16.8, 'vol': 68}, {'price': 16.79, 'vol': 2}, {'price': 16.78, 'vol': 1176}], 'ask': [{'price': 16.83, 'vol': 35}, {'price': 16.84, 'vol': 24}, {'price': 16.85, 'vol': 71}, {'price': 16.86, 'vol': 10}, {'price': 16.87, 'vol': 1}]}  0001010110010110      0.00%     2760     2760  13121.82
 
 [1 rows x 22 columns]
+~~~
 
-print("获取股票排行榜")
+### print("获取股票排行榜")
+
+~~~
 print(pd.DataFrame(client.stock_top_board()))
 
                                              increase  ...                                           turnover
@@ -365,7 +378,12 @@ print(pd.DataFrame(client.stock_top_board()))
 
 [20 rows x 9 columns]
 
-print("获取各类股票行情列表")
+~~~
+
+
+### print("获取各类股票行情列表")
+
+~~~
 print(pd.DataFrame(client.stock_quotes_list(CATEGORY.A, count = 0, sort_type=SORT_TYPE.TOTAL_AMOUNT)))
 
          market    code    close     open     high      low  pre_close  ... short_turnover  min2_amount  opening_rush  vol_rise_speed    depth  active   turnover
@@ -382,8 +400,10 @@ print(pd.DataFrame(client.stock_quotes_list(CATEGORY.A, count = 0, sort_type=SOR
 5522  MARKET.SZ  000430     0.00     0.00     0.00     0.00       8.26  ...          0.00%          0.0         0.00%           0.00%    0.00%       0        NaN
 
 [5523 rows x 26 columns]
+~~~
 
-print("获取股票报价")
+### print("获取股票报价")
+~~~
 print(pd.DataFrame(client.stock_quotes(MARKET.SZ, '000001')))
 
       market    code  close   open   high    low  pre_close  ... short_turnover  min2_amount  opening_rush  vol_rise_speed   depth  active  turnover
@@ -769,9 +789,11 @@ json
 ]
 ~~~
 
-~~~
 
-print("获取历史委托数据")
+
+### print("获取历史委托数据")
+
+~~~
 print(pd.DataFrame(client.stock_history_orders(MARKET.SZ, '000001', date(2026, 3, 16))))
 
      price  unknown    vol
@@ -788,8 +810,12 @@ print(pd.DataFrame(client.stock_history_orders(MARKET.SZ, '000001', date(2026, 3
 239  10.92       -1   7581
 
 [240 rows x 3 columns]
+~~~
 
-print("获取历史成交数据")
+
+### print("获取历史成交数据")
+
+~~~
 print(pd.DataFrame(client.stock_transaction(MARKET.SZ, '000001')))
 
           time  price    vol  trans   action  unknown
@@ -823,8 +849,12 @@ print(pd.DataFrame(client.stock_transaction(MARKET.SZ, '000001', date(2026, 3, 1
 4181  15:00:00  10.92  7581  NEUTRAL        0
 
 [4182 rows x 5 columns]
+~~~
 
-print("获取股票分时缩略")
+
+### print("获取股票分时缩略")
+
+~~~
 print(pd.DataFrame(client.stock_chart_sampling(MARKET.SZ, '000001')))
 
         0
@@ -841,7 +871,11 @@ print(pd.DataFrame(client.stock_chart_sampling(MARKET.SZ, '000001')))
 60  10.99
 [61 rows x 1 columns]
 
- print("获取F10数据")
+~~~
+
+### print("获取F10数据")
+
+~~~
 # print(pd.DataFrame(client.stock_f10(MARKET.SZ, '000001')))
 
     name                                            content
@@ -890,108 +924,5 @@ PS D:\Thirdprogram\newtdxtqv772\PYPlugins\user>
 ~~~
 
 
-
-# opentdx — Python TDX 量化行情数据接口
-
-项目创意来自[`pytdx`](https://github.com/rainx/pytdx)
-
-感谢[@rainx](https://github.com/rainx)迈出的第一步
-
-### ✨ 声明
-
-> 本项目为个人**学习项目，并非已完成的开箱即用的产品**，仅用于学习交流
->
-> 对于数据有迫切需求的朋友，通达信新推出了[官方量化平台](https://help.tdx.com.cn/quant/)，建议食用。
-
-> 由于项目连接的是通达信客户端明文公开的服务器，是财富趋势科技公司既有的行情软件兼容行情服务器，只是简单整理便于大家学习，**严禁**用于任何**商业用途**，更**严禁滥用接口**，对此造成的任何问题本人概不负责。
-
-又因本项目在持续推进中，接口**难免会有大幅改动，带来的不便请予宽宥**。
-
-> ### 应biner建议，本项目精简为基础数据接口库，mcp相关将移动到 [tdx_mcp](https://github.com/LisonEvf/tdx_mcp)
-> ### 又因pytdx2库名rainx已经用了，因此本库改名为opentdx，再次致敬rainx
-> ### 又又，协议基本完成解析了，后期就着力于 [tdx_mcp](https://github.com/LisonEvf/tdx_mcp)了和少量组合技接口
-
-
-## 主要功能
-
-| 功能 | 说明 | 新增 |
-|------|------| -|
-| 股票行情 | A股、创业板、科创板、北交所 | ✅支持北交所 | 
-| 扩展行情 | 期货、港股、美股、期权等 | ✅支持AH股关联查询 |
-| K线数据 | 多周期（1分/5分/日线/周线等）|  ✅支持复权、即时换手率 |
-| 分时图 | 实时/历史分时数据 | |
-| 排行榜 | 涨跌幅、振幅、换手率等 |  |
-| 板块数据 | 行业/地区/概念板块列表及成分股 | 🌟 板块K线数据 | 
-| 异动监控 | 主力监控精灵数据 | |
-| F10资料 | 公司基本信息、财报 | |
-
-## 安装
-
-```bash
-pip install opentdx
-
-```
-
-## 指南
-
-```bash
-opentdx doc 
-```
-
-## 快速上手
-
-```python
-from datetime import date
-
-import pandas as pd
-from opentdx.tdxClient import TdxClient
-from opentdx.const import MARKET, CATEGORY, EX_MARKET, PERIOD, SORT_TYPE
-
-if __name__ == "__main__":
-  with TdxClient() as client:
-    # 指数信息
-    print(pd.DataFrame(client.index_info([(MARKET.SH, '999999'), (MARKET.SZ, '399001')])))
-    # 股票列表（带排序过滤）
-    print(pd.DataFrame(client.stock_quotes_list(CATEGORY.A, sortType=SORT_TYPE.TOTAL_AMOUNT)))
-    # 股票报价
-    print(pd.DataFrame(client.stock_quotes(MARKET.SZ, '000001')))
-    # 获取行情全景
-    for name, board in client.stock_top_board().items():
-        print(f"榜单：{name}")
-        print(pd.DataFrame(board))
-    # 获取k线
-    print(pd.DataFrame(client.stock_kline(MARKET.SZ, '000001', PERIOD.DAILY)))
-    # 获取指数k线
-    print(pd.DataFrame(client.stock_kline(MARKET.SH, '999999', PERIOD.MINS, times=10)))
-    # 获取历史分时
-    print(pd.DataFrame(client.stock_tick_chart(MARKET.SZ, '000001', date(2026, 3, 16))))
-    # 获取个股F10
-    print(pd.DataFrame(client.stock_f10(MARKET.SZ, '000001')))
-    # 历史成交
-    print(pd.DataFrame(client.stock_transaction(MARKET.SZ, '000001', date(2024, 1, 15))))
-    
-    # 期货K线
-    print(pd.DataFrame(client.goods_kline(EX_MARKET.SH_FUTURES, 'AUL8', PERIOD.DAILY)))
-    # 获取扩展市场行情列表
-    print(pd.DataFrame(client.goods_quotes_list(EX_MARKET.SH_FUTURES, count=5)))
-    # 获取美股K线
-    print(pd.DataFrame(client.goods_kline(EX_MARKET.US_STOCK, 'TSLA', PERIOD.DAILY)))
-    # 美股行情
-    print(pd.DataFrame(client.goods_quotes(EX_MARKET.US_STOCK, 'TSLA')))
-```
-
-### 🌟 本项目亮点
-
-- ✅ **整体重构**：更加简洁易读
-- ✅ **协议简化**：明确了一些协议的细节，更加清晰易懂
-- ✅ **自动选服**：自动检查服务器连接速度，并选择最快的服务器
-- ✅ **主力监控**：新增异动消息的获取
-- ✅ **板块列表**：像 `通达信`一样根据板块获取股票列表，支持 `深市`、`沪市`、`创业板`、`科创板`、`北交所`
-- ✅ **扩展行情**：支持 `期货`、`期权`、`债券`、`基金`、`港股`、`美股`等行情的获取
-- ✅ **交互式文档**：```python doc.py```一键开启项目探索
-
-#量化交易 #TDX接口 #Python金融
-
----
 
 
