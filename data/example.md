@@ -278,6 +278,23 @@ print(pd.DataFrame(client.stock_kline(MARKET.SH, '999999', PERIOD.MINS, times=10
 
 ~~~
 
+json
+
+~~~
+{
+  "datetime": 20260911,
+  "open": 3910.919921875,
+  "high": 3912.320068359375,
+  "low": 3852.030029296875,
+  "close": 3888.110107421875,
+  "vol": 579123136.0,
+  "amount": 958186323968.0,
+  "float_shares": 4.152913634747156e-30,
+  "turnover": 1.3944983857947698e+40
+}
+~~~
+
+
 ### 获取分时图
 
 ~~~
