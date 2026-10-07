@@ -36,6 +36,10 @@ https://github.com/handsomejustin/easy_tdx Python
 
 https://github.com/freestockso/easy_tdx backup
 
+- bensema/gotdx
+
+https://github.com/bensema/gotdx  go
+
 
 
 
