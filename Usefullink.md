@@ -1,10 +1,12 @@
-202606
+202610
 
 连接行情服务器获取数据   
 
 https://github.com/injoyai/tdx  go
 
 https://github.com/freestockso/tdx  backup
+
+https://github.com/oficcejo/tdx-api  use https://github.com/injoyai/tdx for website(web api)
 
 
 eltdx - 通达信在线行情协议 Python 库
